@@ -1,0 +1,159 @@
+<style>
+.rectangle {
+  cursor: pointer;
+  height: 15px;
+  width: 50px;
+  margin: 0 2px;
+  background-color: #81A0FF;
+  
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .rectangle:hover {
+  background-color: #00279C;
+}
+
+</style>
+
+
+<h2 class="w3-center">Changes and development in Fremantle Ports from 2004 to 2020</h2>
+
+
+
+  <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2004.jpg" style="width:100%">
+
+  <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2005.jpg" style="width:100%">
+  
+   <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2006.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2007.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2008.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2010.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2011.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2012.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2013.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2014.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2015.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2016.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2017.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2018.jpg" style="width:100%">
+    
+    <img class="mySlides" src="https://raw.githubusercontent.com/levizhang0111/Fremantle.github.io/gh-pages/fremantle2020.jpg" style="width:100%">
+      
+
+
+
+
+
+
+<div class="w3-center">
+  <div class="w3-section">
+    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Previous Year</button>
+    <button class="w3-button w3-light-grey" onclick="changeState(this)">PAUSE ||</button>
+    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next Year❯</button>
+  </div>
+  </div>
+  
+  <div style="text-align:center">
+  <span class="rectangle" onclick="currentSlide(1)">2004</span> 
+  <span class="rectangle" onclick="currentSlide(2)">2005</span> 
+  <span class="rectangle" onclick="currentSlide(3)">2006</span>
+  <span class="rectangle" onclick="currentSlide(4)">2007</span>
+  <span class="rectangle" onclick="currentSlide(5)">2008</span>
+  <span class="rectangle" onclick="currentSlide(6)">2010</span>
+  <span class="rectangle" onclick="currentSlide(7)">2011</span>
+  <span class="rectangle" onclick="currentSlide(8)">2012</span>
+  <span class="rectangle" onclick="currentSlide(9)">2013</span>
+  <span class="rectangle" onclick="currentSlide(10)">2014</span>
+  <span class="rectangle" onclick="currentSlide(11)">2015</span>
+  <span class="rectangle" onclick="currentSlide(12)">2016</span>
+  <span class="rectangle" onclick="currentSlide(13)">2017</span>
+  <span class="rectangle" onclick="currentSlide(14)">2018</span>
+  <span class="rectangle" onclick="currentSlide(15)">2020</span> 
+</div>
+
+
+<script>
+var slideIndex = 1;
+var t = setInterval(function () {
+  plusDivs(1);
+}, 500);
+
+showDivs(slideIndex);
+//FUNCIONES PLAY/PAUSE AÑADIDAS POR KIP13
+function changeState(el) {
+  var text = '';
+  if (!t) {
+    t = setInterval(function () {
+      plusDivs(1);
+    }, 500);
+    text = 'PAUSE ||';
+  } else {
+    clearInterval(t);
+    t = false;
+    text = 'RUN';
+  }
+  el.innerText= text;
+}
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  //var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {
+    slideIndex = 1
+  }
+  if (n < 1) {
+    slideIndex = x.length
+  }
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  /* for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }*/
+  x[slideIndex - 1].style.display = "block";
+  //dots[slideIndex - 1].className += " w3-white";
+}
+var slideIndex = 1;
+showSlides(slideIndex);
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("rectangle");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
